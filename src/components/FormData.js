@@ -17,12 +17,12 @@ const FormData = React.forwardRef(({ product }, ref) => {
     },
   }));
   return (
-    <div>
+    <React.Fragment>
       {productStore.map((value) => {
         console.log(value);
         return <ProductsDisplay each={value} />;
       })}
-    </div>
+    </React.Fragment>
   );
 });
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import FormData from "./FormData";
+import "../scss/Form.scss";
 
 class Form extends Component {
   constructor(props) {
@@ -36,7 +37,6 @@ class Form extends Component {
                 <th>Expiry Date</th>
                 <th>Cost Price</th>
                 <th>Selling Price</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -129,10 +129,6 @@ class Form extends Component {
                     }
                   />
                 </td>
-                <td>
-                  <button onClick={this.deleteProduct}>Delete</button>
-                  <button onClick={this.editProduct}>Edit</button>
-                </td>
               </tr>
               <tr>
                 <td>
@@ -142,7 +138,22 @@ class Form extends Component {
             </tbody>
           </table>
         </form>
-        <FormData ref={this.childRef} product={this.state.product} />
+        <table>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Product</th>
+              <th>Description</th>
+              <th>Expiry Date</th>
+              <th>Cost Price</th>
+              <th>Selling Price</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <FormData ref={this.childRef} product={this.state.product} />
+          </tbody>
+        </table>
       </div>
     );
   }
